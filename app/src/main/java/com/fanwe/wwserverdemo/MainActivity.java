@@ -9,10 +9,11 @@ import android.widget.Button;
 import com.fanwe.lib.wwjsdk.sdk.callback.WWControlSDKCallback;
 import com.fanwe.lib.wwjsdk.sdk.constants.WWCatchResult;
 import com.fanwe.lib.wwjsdk.sdk.constants.WWState;
-import com.fanwe.lib.wwjsdk.sdk.proxy.WWControlSDKProxy;
+import com.fanwe.lib.wwjsdk.sdk.proxy.IWWControlSDKProxy;
 import com.fanwe.lib.wwjsdk.sdk.response.WWCatchResultData;
 import com.fanwe.lib.wwjsdk.sdk.response.WWCheckResultData;
 import com.fanwe.lib.wwjsdk.sdk.response.WWHeartBeatData;
+import com.fanwe.lib.wwjsdk.xuebao.WWControlSDKProxy;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button btn_check, btn_begin, btn_front, btn_back, btn_left, btn_right, btn_catch;
 
-    private WWControlSDKProxy mControlSDK = WWControlSDKProxy.get(); // 创建sdk对象
+    private IWWControlSDKProxy mControlSDK = new WWControlSDKProxy(); // 创建sdk对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
